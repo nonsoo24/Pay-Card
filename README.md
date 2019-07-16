@@ -36,7 +36,7 @@ date entry must be in MM/YY format
 date must not be less than present date
 ```
 
-Validate Card Type
+Detect Card Type
 
 ```
 Checks if card is master or visa using the first number entered
@@ -44,19 +44,18 @@ where 4 = visa card
       5 = Mastercard
 
 ```
-Validate card details
-
-```
-card number inputs must be 16 digits
-
-card number input must not contain alphanumeric characters
-
-```
 
 Validate card number [Luhn Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm/)
 
 ```
 Validates the credit card number using the Luhn Algorithm
+
+Card number inputs must be 16 digits
+
+Each input has a max length of 4
+
+Card number input must not contain alphanumeric characters
+
 ```
 
 Validate Name input
@@ -65,6 +64,8 @@ Validate Name input
 Name input must be in the format - Name Surname
 
 Each name must not be less than 3 characters
+
+Name input must not contain AlphaNumeric
 ```
 
 Format money to local currency
