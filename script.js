@@ -50,3 +50,25 @@ const supportedCards = {
       country: 'Ghana'
     }
   ];
+  
+const appState = {}
+const ccDigitDiv = document.querySelector('[data-cc-digits]') // selects all card number inputs
+
+// formats currency
+const formatAsMoney = (amount, buyerCountry) => {
+
+  const item = countries.find((data) => {
+    return data.country === buyerCountry;
+  });
+  if (item) {
+    return amount.toLocaleString(`en-${item.code}`, {
+      style: 'currency',
+      currency: item.currency
+    });
+  } else {
+    return amount.toLocaleString('en-US', {
+      style: 'currency',
+      currency: 'USD'
+    });
+  }
+};
