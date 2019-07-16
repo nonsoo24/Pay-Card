@@ -53,10 +53,10 @@ card number input must not contain alphanumeric characters
 
 ```
 
-Validate card number
+Validate card number [Luhn Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm/)
 
 ```
-Validates the credit card number using the [Luhn Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm/)
+Validates the credit card number using the Luhn Algorithm
 ```
 
 Validate Name input
@@ -76,8 +76,9 @@ Format money to local currency
 
 * [RandomAPI](https://randomapi.com/api/006b08a801d82d0c9824dcfdfdfa3b3c) - for fecthing the price, quantity and country
 * [HTML5](https://maven.apache.org/) - Markup
-* [CSS,Bootstrap] - for styling
-* [Javascript (Es6)]  - scripting
+* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) - for styling
+* [Bootstrap](https://getbootstrap.com/) - for styling
+* [Javascript](http://es6-features.org/)  - scripting
 
  
 
