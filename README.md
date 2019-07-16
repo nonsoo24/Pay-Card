@@ -56,7 +56,7 @@ card number input must not contain alphanumeric characters
 Validate card number
 
 ```
-Validates the credit card number using the [Luhn Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm)
+Validates the credit card number using the [Luhn Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm/)
 ```
 
 Validate Name input
@@ -86,3 +86,5 @@ Format money to local currency
 * Google
 * Andela
 * Pluralsight
+
+## Click [here](https://pay-card-validation.herokuapp.com/) to view my project.
