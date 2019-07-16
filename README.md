@@ -62,7 +62,7 @@ Validates the credit card number using the Luhn Algorithm
 Validate Name input
 
 ```
-Name input must be in the format -> Name Surname
+Name input must be in the format - Name Surname
 
 Each name must not be less than 3 characters
 ```
