@@ -1,6 +1,6 @@
 const supportedCards = {
-    visa: 'img\visa.png',
-    mastercard: 'img\mastercard.png'
+    visa: '/img/visa.png',
+    mastercard: '/img/mastercard.png'
 
   };
 
