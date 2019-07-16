@@ -72,3 +72,80 @@ const formatAsMoney = (amount, buyerCountry) => {
     });
   }
 };
+
+const flagIfInvalid = (field, isValid) => {
+    if (isValid && field.hasAttribute('class'))
+      field.classList.remove('is-invalid');
+    else
+      field.setAttribute('class', 'is-invalid');
+
+  }
+  const expiryDateFormatIsValid = (target) => {
+    const mm = target.value.split('/')[0];
+    const yy = target.value.split('/')[1];
+    return /(0?[1-9]|1[012])/.test(mm) && /\d{2}$/.test(yy);
+  };
+
+  const detectCardType = ({
+    target
+  }) => {
+    //target is the first of the input field
+    const firstNumber = target.value.charAt(0);
+    const dataCreditDiv = document.querySelector('[data-credit-card]');
+    let stringValue = ""
+    const dataTypeImg = document.querySelector('img[data-card-type]')
+  
+    if (firstNumber == 4) {
+      dataCreditDiv.classList.add('is-visa')
+      stringValue = 'is-visa'
+      dataTypeImg.src = supportedCards.visa
+      return stringValue;
+  
+    } else if (firstNumber == 5) {
+      stringValue = "is-mastercard"
+      dataTypeImg.src = supportedCards.mastercard
+      dataCreditDiv.classList.add('is-mastercard');
+      return stringValue;
+    } else {
+      dataCreditDiv.classList.remove('is-visa');
+      dataCreditDiv.classList.remove('is-mastercard');
+      dataTypeImg.src = 'https://placehold.it/120x60.png?text=Card';
+      return stringValue;
+    }
+  };
+  
+  const validateCardHolderName = ({
+    target
+  }) => {
+    let cardHolderName = target.value.split(' ');
+    if (cardHolderName.length === 2) {
+      let name = cardHolderName[0];
+      let surname = cardHolderName[1];
+      if (name.length >= 3 && surname.length >= 3) {
+        flagIfInvalid(target, true)
+        return true;
+      } else {
+        flagIfInvalid(target, false)
+        return false;
+      }
+    } else {
+      flagIfInvalid(target, false)
+      return false;
+    }
+  }
+  
+  const validateCardExpiryDate = ({
+    target
+  }) => {
+    const m = target.value.split('/')[0];
+    const y = target.value.split('/')[1];
+    const date = new Date(`${m}/01/${y}`);
+    if (expiryDateFormatIsValid(target) && date > new Date()) {
+      flagIfInvalid(target, true);
+      return true;
+    } else {
+      flagIfInvalid(target, false);
+      return false;
+    }
+  };
+  
