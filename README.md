@@ -1,6 +1,6 @@
 # PayCard
 
-A Front End Visa and MasterCard validation App
+A credit card validation App
 
 ## Getting Started
 
