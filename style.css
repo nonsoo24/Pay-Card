@@ -1,0 +1,142 @@
+body {
+    margin: 0;
+    padding: 1em;
+    background-color: white;
+  }
+
+  /* attributes styling */
+[data-cart-info],
+[data-credit-card] {
+  transform: scale(0.78);
+  margin-left: -3.4em;
+}
+
+[data-cc-info] input:focus,
+[data-cc-digits] input:focus {
+  outline: none;
+}
+
+.mdc-card__primary-action,
+.mdc-card__primary-action:hover {
+  cursor: auto;
+  padding: 20px;
+  min-height: inherit;
+}
+
+[data-credit-card] [data-card-type] {
+  transition: width 1.5s;
+  margin-left: calc(100% - 130px);
+}
+
+[data-credit-card].is-visa {
+  background: linear-gradient(135deg, #622774 0%, #c53364 100%);
+}
+
+[data-credit-card].is-mastercard {
+  background: linear-gradient(135deg, #65799b 0%, #5e2563 100%);
+}
+
+.is-visa [data-card-type],
+.is-mastercard [data-card-type] {
+  width: auto;
+}
+
+input.is-invalid,
+.is-invalid input {
+  text-decoration: line-through;
+}
+
+::placeholder {
+  color: #fff;
+}
+
+/* shopping cart icon */
+.material-icons {
+    font-size: 150px;
+  }
+  h4 span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+/* pay-card section */
+div[data-credit-card] {
+    width: 435px;
+    min-height: 240px;
+    border-radius: 10px;
+    background-color: #5d6874;
+    position: relative;
+    left: 500px;
+  }
+
+  div[data-card-credit] {
+    display: block;
+    width: 120px;
+    height: 60px;
+  }
+
+  img[data-card-type] {
+    display: block;
+    width: 120px;
+    height: 60px;
+  }
+
+  div[data-cc-digits] {
+    margin-top: 2em;
+  }
+
+  div[data-cc-info] input {
+    color: white;
+    font-size: 1.2em;
+    border: none;
+    background: none;
+  }
+
+  div[data-cc-info] input:nth-child(2) {
+    padding-right: 10px;
+    float: right;
+  }
+
+  div[data-cc-digits] input {
+    color: white;
+    font-size: 2em;
+    line-height: 2em;
+    border: none;
+    background: none;
+    margin-right: 0.5em;
+  }
+
+  div[data-cc-info] {
+    margin-top: 1em;
+  }
+
+
+
+
+  /* button styling */
+button[data-pay-btn] {
+    position: relative;
+    left: 550px;
+    bottom: 20px;
+    background-color: white;
+    color: black;
+    border: 2px solid #555555;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+  }
+
+  button[data-pay-btn]:hover {
+    background-color: #5D6874;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+
+
+  }

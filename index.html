@@ -18,15 +18,17 @@
                 <span data-bill></span>
             </h4>
         </div>
+        </section>
 
+        <section>
         <div data-credit-card class="mdc-card mdc-card-outlined">
             <div class="mdc-card__primary-action">
                 <img src="http://placehold.it/120x60.png?text=Card." alt="" data-card-type class="text-center"/>
                 <div data-cc-digits>
-                    <input type="text" placeholder="----" size="4" />
-                    <input type="text" placeholder="----" size="4" />
-                    <input type="text" placeholder="----" size="4" />
-                    <input type="text" placeholder="----" size="4" />
+                    <input type="text" placeholder="----" size="4" maxlength="4"/>
+                    <input type="text" placeholder="----" size="4" maxlength="4" />
+                    <input type="text" placeholder="----" size="4" maxlength="4"/>
+                    <input type="text" placeholder="----" size="4" maxlength="4" />
                 </div>
 
                 <div data-cc-info>
@@ -35,6 +37,7 @@
                 </div>
             </div>
         </div>
+        <button class="mdc-button btn btn-outline-" data-pay-btn>Pay & Checkout Now</button>
     </section>
     </main>
 </body>
