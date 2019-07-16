@@ -149,3 +149,51 @@ const flagIfInvalid = (field, isValid) => {
     }
   };
   
+  const validateWithLuhn = (digits) => {
+    let sum = 0;
+    const digitsAreValid = digits.every((item) => {
+      return !isNaN(Number.parseInt(item));
+    });
+    if (digitsAreValid && digits.length === 16) {
+      const reversed = digits.reverse();
+      reversed.forEach((item, index) => {
+        if (index % 2 > 0) {
+          const doubled = Number.parseInt(item) * 2;
+          if (doubled > 9) {
+            sum += (doubled - 9);
+          } else {
+            sum += doubled;
+          }
+        } else {
+          sum += Number.parseInt(item);
+        }
+      });
+      // console.log(sum);
+      return (sum % 10) === 0;
+    } else {
+      return false;
+    }
+  };
+  const validateCardNumber = () => {
+    const digits = document.querySelector('[data-cc-digits]');
+    // console.log(digits.childNodes);
+    const data = [];
+    Array.from(digits.childNodes).forEach((item) => {
+      if (item.value) {
+        const strItem = item.value.toString();
+        for (let i = 0; i < strItem.length; i++) {
+          const charItem = strItem.charAt(i);
+          data.push(charItem);
+        }
+      }
+    });
+    if (validateWithLuhn(data)) {
+      if (digits.classList.contains('is-invalid')) {
+        flagIfInvalid(digits, true);
+      }
+      return true;
+    } else {
+      flagIfInvalid(digits, false);
+      return false;
+    }
+  };
