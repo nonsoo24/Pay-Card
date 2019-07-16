@@ -197,3 +197,59 @@ const flagIfInvalid = (field, isValid) => {
       return false;
     }
   };
+
+
+  const uiCanInteract = () => {
+
+    const ccDigit = ccDigitDiv.firstElementChild;
+    ccDigit.addEventListener('blur', detectCardType);
+  
+    const ccInfo = document.querySelectorAll('div[data-cc-info] input');
+    //first input element
+    ccInfo[0].addEventListener('blur', validateCardHolderName);
+    //second input element
+    ccInfo[1].addEventListener('blur', validateCardExpiryDate);
+  
+    button = document.querySelector('button[data-pay-btn]')
+    button.addEventListener('click', validateCardNumber);
+    ccDigit.focus();
+  }
+  
+  const displayCartTotal = ({
+    results
+  }) => {
+    const [data] = results
+    const {
+      buyerCountry,
+      itemsInCart
+    } = data
+    appState.items = itemsInCart
+    appState.country = buyerCountry
+  
+    appState.bill = itemsInCart.reduce((sum, num) => {
+      accumulator = sum.price * sum.qty
+      currentValue = num.price * num.qty
+      return (accumulator + currentValue);
+    });
+  
+    appState.billFormatted = formatAsMoney(appState.bill, appState.country)
+    document.querySelector('span[data-bill]').textContent = appState.billFormatted;
+  
+    uiCanInteract();
+  }
+  const fetchBill = () => {
+    const api = "https://randomapi.com/api/006b08a801d82d0c9824dcfdfdfa3b3c"
+    fetch(api)
+      .then(response => response.json())
+      .then(data => {
+        displayCartTotal(data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+  const startApp = () => {
+    fetchBill();
+  };
+  
+  startApp();
