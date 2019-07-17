@@ -67,11 +67,18 @@ Name input must be in the format -> Name Surname
 Each name must not be less than 3 characters
 ```
 
-Format money to local currency
-```
+Display cart total
 
 ```
- 
+This function will be called with the data from the random API and it will display the total payment bill.
+```
+
+Format money to local currency
+```
+It takes an amount and a buyerCountry parameter. It uses these parameters to format the user's bill as a proper currency.
+
+```
+
 ## Built With
 
 * [RandomAPI](https://randomapi.com/api/006b08a801d82d0c9824dcfdfdfa3b3c) - for fecthing the price, quantity and country
@@ -79,7 +86,7 @@ Format money to local currency
 * [CSS,Bootstrap] - for styling
 * [Javascript (Es6)]  - scripting
 
- 
+
 
 ## Acknowledgments
 
@@ -87,4 +94,4 @@ Format money to local currency
 * Andela
 * Pluralsight
 
-## Click [here](https://pay-card-validation.herokuapp.com/) to view my project.
+## Click [here](https://pay-card-validation.herokuapp.com/) to view project.
