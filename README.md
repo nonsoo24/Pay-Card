@@ -4,7 +4,7 @@ A credit card validation App
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
@@ -20,7 +20,7 @@ internet connection
 Fork and download
 ```
 
-And 
+And
 
 ```
 open in browser
@@ -36,7 +36,7 @@ date entry must be in MM/YY format
 date must not be less than present date
 ```
 
-Validate Card Type
+Detect Card Type
 
 ```
 Checks if card is master or visa using the first number entered
@@ -44,27 +44,28 @@ where 4 = visa card
       5 = Mastercard
 
 ```
-Validate card details
+
+Validate card number [Luhn Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm/)
 
 ```
-card number inputs must be 16 digits
+Validates the credit card number using the Luhn Algorithm
 
-card number input must not contain alphanumeric characters
+Card number inputs must be 16 digits
 
-```
+Each input has a max length of 4
 
-Validate card number
+Card number input must not contain alphanumeric characters
 
-```
-Validates the credit card number using the [Luhn Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm/)
 ```
 
 Validate Name input
 
 ```
-Name input must be in the format -> Name Surname
+Name input must be in the format - Name Surname
 
 Each name must not be less than 3 characters
+
+Name input must not contain AlphaNumeric
 ```
 
 Display cart total
@@ -83,8 +84,9 @@ It takes an amount and a buyerCountry parameter. It uses these parameters to for
 
 * [RandomAPI](https://randomapi.com/api/006b08a801d82d0c9824dcfdfdfa3b3c) - for fecthing the price, quantity and country
 * [HTML5](https://maven.apache.org/) - Markup
-* [CSS,Bootstrap] - for styling
-* [Javascript (Es6)]  - scripting
+* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) - for styling
+* [Bootstrap](https://getbootstrap.com/) - for styling
+* [Javascript](http://es6-features.org/)  - scripting
 
 
 
@@ -95,3 +97,4 @@ It takes an amount and a buyerCountry parameter. It uses these parameters to for
 * Pluralsight
 
 ## Click [here](https://pay-card-validation.herokuapp.com/) to view project.
+
